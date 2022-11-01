@@ -1,0 +1,41 @@
+<!DOCTYPE html>  
+<html>  
+    <head>  
+        <title>Register</title>  
+    </head>  
+    <body>  
+        <h2>Registration form</h2>  
+        <form method="post" action="/">  
+            <fieldset>  
+                <legend>User personal information</legend>  
+                <label>Enter your full name</label><br>  
+                <input type="text" name="UserName"><br>  
+                <label>Enter your email</label><br>  
+                <input type="email" name="UserEmail">
+                {% for error in errors %}
+                    {%if error.param == 'UserEmail'%}
+                        <br>{{error.msg}}
+                    {% endif %}    
+                {% endfor %}
+                <br>
+                <label>Enter your password</label><br>  
+                <input type="password" name="UserPassword">
+                {% for error in errors %}
+                    {%if error.param == 'UserPassword'%}
+                        <br>{{error.msg}}
+                    {% endif %}    
+                {% endfor %}
+                <br>  
+                <label>confirm your password</label><br>  
+                <input type="password" name="pass"><br>
+                <br><label>Enter your gender</label><br>  
+                <input type="radio" id="gender" name="gender" value="male"/>Male  <br>  
+                <input type="radio" id="gender" name="gender" value="female"/>Female <br/>    
+                <input type="radio" id="gender" name="gender" value="others"/>Others <br/>   
+                <br>Enter your Address:<br>  
+                <textarea></textarea><br>  
+                <input type="submit" value="sign-up">  
+            </fieldset>  
+        </form>  
+    </body>  
+</html>

@@ -1,0 +1,24 @@
+﻿<?php
+
+namespace OPS\V1\Rest\FlightCargo;
+
+use CoreLib\OPSResource;
+use OPS\V1\Rest\FlightCargo\FlightExtendedEntity;
+use OPS\V1\Rest\FlightCargo\FlightModel;
+
+
+class FlightCargoResource extends OPSResource {
+    /*
+     * init
+     */
+
+    public function init() {
+        $this->setNameSpace(__NAMESPACE__);
+        $this->setEntity('FlightCargoExtendedEntity');
+        $this->setModel('FlightCargoModel');
+        parent::init();
+    }
+
+   
+
+}
