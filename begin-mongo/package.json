@@ -4,7 +4,7 @@
   "description": "mongo practice",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon main"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
     "express": "^4.18.2",
     "express-validator": "^6.14.2",
     "mongoose": "^6.7.0",
+    "nodemon": "^2.0.20",
     "pug": "^3.0.2",
     "twig": "^1.15.4"
   }

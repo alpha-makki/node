@@ -1,6 +1,5 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const moongose = require
 const { body, validationResult } = require('express-validator');
 const app = express()
 const port = 3000
