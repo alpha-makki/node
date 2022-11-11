@@ -1,17 +1,21 @@
 const mongoose = require('mongoose');
-mongoose.connect("mongodb://localhost:27017");
+mongoose.connect("mongodb://localhost:27017/hrm");
 const conn = mongoose.connection;
+
 const emmployeeSchema = mongoose.Schema({
-    first_name: String,
-    last_name: String,
+    name: String,
+    email: String,
+    password:String,
     gender: Number,
-    city_id: Number
-}, {collection: "employee"});
+    basicSalary: Number,
+    tax: Number,
+    salary: Number
+}, { autoCreate: false});
 // userSchema.methods.userSalary = function(){
 //     console.log('%s take home salary is %d', this.name, (this.basicSalary - ((this.basicSalary * this.tax) / 100)));
 // }
-const employee = mongoose.model('hrm', emmployeeSchema);
-const firstEmployee = new employee({first_name: 'Muhammed', last_name: 'Makki', gender: 0, city_id: 17});
+const employee = mongoose.model('employee', emmployeeSchema);
+const firstEmployee = new employee({name: 'Makki', email: 'makki@gmail.com', password:'abc123', gender: 0, basicSalary: 50000, tax: 8});
 
 conn.on('connected', function(){
     console.log('db connected succesfully');
@@ -28,8 +32,9 @@ conn.once('open', function(){
         if(err) throw err;
         console.log('res', res);
         conn.close();
-    }, {collection: "employee"});
+    });
 })
+console.log('Insert DAte:--', employee.find());
 //firstUser.tax = 12;
 //firstUser.userSalary();
 
