@@ -15,7 +15,7 @@ module.exports = {
               fallback: "style-loader",
               use: [
                 {
-                    loaders: "css-loader",
+                    loader: "css-loader",
                     options:{
                         minimize:true
                     }
